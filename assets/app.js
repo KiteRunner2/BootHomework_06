@@ -1,6 +1,8 @@
-console.log('hello');
+let cities = {
+    cityList: []
+};
 
-let cities = [];
+console.log(cities);
 
 async function getWeather(city){
     let apiKey = 'a7964fea4cc921b4a47ca07c5861fd45';
@@ -19,12 +21,13 @@ async function getWeather(city){
 };
 
 function renderList(items){
-    if(items.length > 5){
-        console.log('more than 5 take action');
-    }
+    // if(items.length > 5){
+    //     items = items.slice(0,5);
+    //     console.log('more than 5 take action');
+    // }
     document.getElementById('list-group').innerHTML = '';
     let innerHTML = '<input type="text" placeholder="Search for city" class="list-group-item rounded" id="searchBox">';
-    cities.forEach(el => {
+    cities.cityList.forEach(el => {
         innerHTML += `<li class="list-group-item rounded">${el}</li>`
     })
     document.getElementById('list-group').innerHTML = innerHTML;
@@ -34,10 +37,19 @@ function renderList(items){
 
 function search(){
     let city = document.getElementById('searchBox').value;
-    cities.unshift(city);
-    renderList(cities);
+    cities.cityList.unshift(city);
+    if (cities.cityList.length > 6){
+        cities.cityList.pop();
+    }
+    renderList(cities.cityList);
+    saveToStorage(cities);
     getWeather(city);
 
+}
+
+function saveToStorage(items){
+    debugger;
+    localStorage.setItem('cities',JSON.stringify(items.cityList));
 }
 
 
@@ -50,7 +62,20 @@ document.addEventListener('keydown',(event) => {
     }
 });
 
+function loadFromStorage(items){
+    debugger;
+    if (localStorage.getItem('cities')){
+        items.cityList = JSON.parse(localStorage.getItem('cities'));
+        //return items;
+    }
+}
 
+function init(){
+    loadFromStorage(cities);
+    renderList(cities);
+}
+
+init();
 
 // getWeather('Warsaw');
 // getWeather('New York');
