@@ -1,2 +1,5 @@
-# BootHomework_06
+# Weather dashboard
+
+```
 Weather dashboard
+```
