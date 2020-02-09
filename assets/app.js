@@ -1,5 +1,5 @@
 let cities = {
-    cityList: []
+    cityList: ['Toronto','Brampton','Mississauga','New York','Dubai','Ottawa','London']
 };
 
 async function getCurrentWeather(city) {
@@ -40,7 +40,7 @@ async function getForecastWeather(city) {
     let innerHTML = '';
     days.forEach(el => {
         innerHTML += `<div class="col-2" style="margin:5px;"><div class="card border-light" style="color:white;width: 12rem;">
-        <div class="card-body" style="background-color:#3385ff;">
+        <div class="card-body" style="padding:5px;background-color:#3385ff;">
             <h5 class="card-title1" id="card-title1">${moment(el.dt_txt).format('YYYY-MM-DD')}</h5>
             <img src="http://openweathermap.org/img/wn/${el.weather[0].icon}@2x.png" class="card-img-top" style="width:30px;heigth:30px;">
             <p>Temp: ${Math.round(el.main.temp - 273.15)} &#x2103;<br>Humidity: ${el.main.humidity}%</p>
@@ -85,8 +85,9 @@ function renderList(items) {
 function search() {
 
     let city = document.getElementById('searchBox').value;
+    document.getElementById('searchBox').value = '';
     cities.cityList.unshift(city);
-    if (cities.cityList.length > 6) {
+    if (cities.cityList.length > 7) {
         cities.cityList.pop();
     }
     renderList(cities);
