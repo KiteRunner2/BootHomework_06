@@ -17,12 +17,17 @@ async function getCurrentWeather(city){
     let date = new Date();
     //Date.toString(data.dt);
     console.log(`Date: ${date.toString(data.dt)}, Temp: ${data.main.temp-273.15} C, Humidity: ${data.main.humidity}%, Wind speed: ${data.wind.speed} m/s`);
-    // console.log('Number of elements: ', data.length);
+    
+    document.getElementById('cityName').innerText = `${data.name}, ${data.sys.country}`;
+    document.getElementById('date').innerText = moment(date.toISOString(data.dt)).format('(YYYY-MM-DD)');
+    document.getElementById('currentTemp').innerText = ` Temperature: ${Math.round(data.main.temp-273.15
+    )} C`;
+    document.getElementById('humidity').innerText = `Humidity: ${data.main.humidity}%`;
+    document.getElementById('windSpeed').innerText = `Wind speed: ${data.wind.speed} m/s`;
 
-    // data.forEach(element => {
-    //     console.log(element);
-    // });
+    
     getUVIndex(data.name,data.coord.lon,data.coord.lat);
+
     getForecastWeather(city);
     
 };
@@ -43,6 +48,16 @@ async function getUVIndex(city,lon,lat){
     const result = await fetch(queryUrl);
     const data = await result.json();
     console.log(`UV index for ${city} is: ${data.value}`);
+
+    document.getElementById('UV').innerHTML = `UV Index: <span id="UVcolor" class="UVcolor-red">&nbsp;${data.value}&nbsp;</span>`;
+    if (data.value <= 3){
+        document.getElementById('UVcolor').className = "UVcolor-green";
+    }
+    else if (data.value > 3 && data.value <= 6){
+        document.getElementById('UVcolor').className = "UVcolor-orange";
+    } else {
+        document.getElementById('UVcolor').className = "UVcolor-red";
+    }
     //console.log(data)
 }
 

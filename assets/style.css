@@ -3,7 +3,7 @@
   }
 
 body {
-    background-color: antiquewhite;
+    background-color: white;
 }
 
 .grid-container {
@@ -11,27 +11,34 @@ body {
     align-content: space-evenly;
     grid-template-columns: auto auto auto auto auto auto;
     grid-template-rows: auto auto auto auto auto;
-    background-color: burlywood;
+    background-color: white;
   }
   .grid-container2 {
     display: grid;
     align-content: space-evenly;
     grid-template-columns: auto auto auto auto auto;
     grid-template-rows: auto;
-    background-color: burlywood;
+    background-color: white;
   }
 
   .grid-container > div {
-    background-color: rgba(78, 33, 33, 0.37);
-    text-align: center;
+    background-color:white;
+    text-align: left;
     
     font-size: large;
-    border-color: darkblue;
+    border-color: black;
     border-style: solid;
+    border-radius: 5px;
+    border-width: 1px;
+    margin-top: 5px;
+    margin-left: 5px;
+    /* padding: 5px; */
   }
 
+ 
+
   .grid-container2 > div {
-    background-color: rgba(78, 33, 33, 0.37);
+    background-color:white;
     text-align: center;
     
     font-size: large;
@@ -59,6 +66,8 @@ body {
     grid-column-start: 2;
     grid-row-end: 3;
     grid-column-end: 7;
+    
+    
     /* width: 30%; */
 }
 
@@ -85,6 +94,8 @@ body {
     grid-column-start: 3;
     
     grid-column-end: 4;
+
+
     
 }
 .item4-2{
@@ -98,4 +109,36 @@ body {
     
     grid-column-end: 6;
     
+}
+
+.cityName{
+    font-weight: bold;
+}
+
+header {
+    font-weight: bolder;
+    font-size: x-large;
+}
+
+.UVcolor-red{
+    background-color: red;
+    color:white;
+    border-radius: 3px;
+}
+
+.UVcolor-green{
+    background-color:green;
+    color:white;
+    border-radius: 3px;
+}
+
+.UVcolor-orange{
+    background-color:orangered;
+    color:white;
+    border-radius: 3px;
+}
+
+.div3{
+    padding-left: 20px;
+    padding-top:20px;
 }
