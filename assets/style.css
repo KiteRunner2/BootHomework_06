@@ -13,13 +13,7 @@ body {
     grid-template-rows: auto auto auto auto auto;
     background-color:#f5f5f5;
   }
-  /* .grid-container2 {
-    display: grid;
-    align-content: space-evenly;
-    grid-template-columns: auto auto auto auto auto;
-    grid-template-rows: auto;
-    background-color: white;
-  } */
+
 
   .grid-container > div {
     background-color:#f5f5f5;
@@ -32,19 +26,7 @@ body {
     border-width: 1px;
     margin-top: 5px;
     margin-left: 5px;
-    /* padding: 5px; */
-  }
-
- 
-
-  /* .grid-container2 > div {
-    background-color:white;
-    text-align: center;
-    
-    font-size: large;
-    border-color: darkblue;
-    border-style: solid;
-  } */
+ }
 
 .item1{
     grid-column-start: 1;
@@ -73,39 +55,6 @@ body {
     grid-row-end: 6;
     padding:10px;
 }
-/* 
-.item1-2{
-    grid-column-start: 1;
-    
-    grid-column-end: 2;
-    
-}
-.item2-2{
-    grid-column-start: 2;
-    
-    grid-column-end: 3;
-    
-}
-.item3-2{
-    grid-column-start: 3;
-    
-    grid-column-end: 4;
-
-
-    
-}
-.item4-2{
-    grid-column-start: 4;
-    
-    grid-column-end: 5;
-    
-}
-.item5-2{
-    grid-column-start: 5;
-    
-    grid-column-end: 6;
-    
-} */
 
 .cityName{
     font-weight: bold;

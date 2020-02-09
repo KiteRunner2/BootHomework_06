@@ -27,6 +27,7 @@ There are 3 API calls:
 
  * bootstrap for some elements
  * moments.js for some date formatting
+ * CSS grid layout
 
  ```
 
