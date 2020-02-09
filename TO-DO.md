@@ -1,6 +1,7 @@
 # TO-DO
 ```
-1. add local storage
+1. add local storage - done
+
 
 
 
