@@ -13,7 +13,7 @@ async function getCurrentWeather(city) {
 
     document.getElementById('cityName').innerText = `${data.name}, ${data.sys.country}`;
     document.getElementById('date').innerText = moment(date.toISOString(data.dt)).format('(YYYY-MM-DD)');
-    let iconUrl = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+    let iconUrl = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
     document.getElementById('icon').setAttribute("src", iconUrl);
     document.getElementById('currentTemp').innerText = ` Temperature: ${Math.round(data.main.temp-273.15)} C`;
     document.getElementById('humidity').innerText = `Humidity: ${data.main.humidity}%`;
@@ -42,7 +42,7 @@ async function getForecastWeather(city) {
         innerHTML += `<div class="col-2" style="margin:5px;"><div class="card border-light" style="color:white;width: 12rem;">
         <div class="card-body" style="padding:5px;background-color:#3385ff;">
             <h5 class="card-title1" id="card-title1">${moment(el.dt_txt).format('YYYY-MM-DD')}</h5>
-            <img src="http://openweathermap.org/img/wn/${el.weather[0].icon}@2x.png" class="card-img-top" style="width:30px;heigth:30px;">
+            <img src="https://openweathermap.org/img/wn/${el.weather[0].icon}@2x.png" class="card-img-top" style="width:30px;heigth:30px;">
             <p>Temp: ${Math.round(el.main.temp - 273.15)} &#x2103;<br>Humidity: ${el.main.humidity}%</p>
         </div>
         </div></div>`;
