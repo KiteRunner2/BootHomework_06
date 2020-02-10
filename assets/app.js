@@ -54,7 +54,7 @@ async function getForecastWeather(city) {
 
 async function getUVIndex(lon, lat) {
     let apiKey = 'a7964fea4cc921b4a47ca07c5861fd45';
-    let queryUrl = `http://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${lat}&lon=${lon}`;
+    let queryUrl = `https://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${lat}&lon=${lon}`;
     const result = await fetch(queryUrl);
     const data = await result.json();
 
