@@ -20,7 +20,7 @@ async function getCurrentWeather(city) {
     document.getElementById('windSpeed').innerText = `Wind speed: ${data.wind.speed} m/s`;
 
 
-    getUVIndex(data.name, data.coord.lon, data.coord.lat);
+    getUVIndex(data.coord.lon, data.coord.lat);
 
     getForecastWeather(city);
 
@@ -52,7 +52,7 @@ async function getForecastWeather(city) {
 
 };
 
-async function getUVIndex(city, lon, lat) {
+async function getUVIndex(lon, lat) {
     let apiKey = 'a7964fea4cc921b4a47ca07c5861fd45';
     let queryUrl = `http://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${lat}&lon=${lon}`;
     const result = await fetch(queryUrl);
@@ -68,7 +68,7 @@ async function getUVIndex(city, lon, lat) {
         document.getElementById('UVcolor').className = "UVcolor-red";
     }
 
-}
+};
 
 function renderList(items) {
 
