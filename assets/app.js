@@ -85,7 +85,6 @@ function renderList(items) {
 function search() {
 
     let city = document.getElementById('searchBox').value;
-    document.getElementById('searchBox').value = '';
     cities.cityList.unshift(city);
     if (cities.cityList.length > 7) {
         cities.cityList.pop();
